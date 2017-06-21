@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+         <h:form>
+            <h2>
+                <h:outputLabel value="Редактирование информации о товаре"/>
+            </h2>
+             <input type="hidden" name="idMaterial" value="#{stuffBean.idstuff}"/>
+
+             Название        <h:inputText id="name" value="#{stuffBean.stuffname}" required="true"/> <br/>
+             Измерение             <h:inputText id="weight" value="#{stuffBean.stufftype}" required="true"/><br/>
+             Цена   <h:inputText id="manufacturer" value="#{stuffBean.price}" required="true"/><br/>
+             <h:commandLink value="Готово" action="#{stuffBean.editStuff()}" />
+            <div><h:commandLink value="Назад" immediate="true" action="/Stuff.xhtml" /> </div>
+        </h:form>
+    </h:body>
+</html>
+

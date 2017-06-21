@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+       <f:view>
+            <h:form>
+                <h2>
+                    <h:outputLabel value="Добавление расходного товара"/>
+                </h2>
+                <table>
+                    <tr>
+                        <th>
+                            <h:outputLabel value="Название" for="name"/>
+                        </th>
+                        <th>
+                            <h:inputText id="name" value="#{stuffBean.stuffname}" required="true">  
+                            
+
+                            </h:inputText>                                                                   
+                            
+                        </th>
+                        <th>
+                            <h:message for="name" style="color:red" /> 
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <h:outputLabel value="Измерение" for="measure"/>
+                        </th>
+                        <th>
+                            <h:inputText id="weight" value="#{stuffBean.stufftype}" required="true">
+                            </h:inputText>                                                                   
+                        </th>
+                        <th>
+                            <h:message for="Измерение" style="color:red" /> 
+                        </th>
+                    </tr> 
+                    <tr>
+                        <th>
+                            <h:outputLabel value="Цена" for="price"/>
+                        </th>
+                        <th>
+                            <h:inputText id="manufacturer" value="#{stuffBean.price}" required="true">  </h:inputText>                                                                   
+                        </th>
+                        <th>
+                            <h:message for="Цена" style="color:red" /> 
+                        </th>
+                    </tr>          
+                    <tr>
+                        <th></th>
+                        <th>
+                            <h:commandLink value="Готово" action="#{stuffBean.addStuff()}"/>
+
+                        </th>
+                    </tr>
+                </table>
+                <div><h:commandLink value="Назад" immediate="true" action="/Stuff.xhtml" /> </div>
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+

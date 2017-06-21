@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h2>
+                <h:outputLabel value="Редактирование информации об объекте"/>
+            </h2>
+            <input type="hidden" name="idMaterial" value="#{placeBean.idplace}"/>
+
+            Материал         <tr>
+                <th>
+                    <h:outputLabel value="Материал" for="fio"/>
+                </th>
+                <th>
+                    <h:selectOneMenu value="#{requestBean.idstuff}"> 
+                        <f:selectItems value="#{stuffBean.getListStuff()}" var="st" 
+                                       itemValue="#{st.idstuff}" itemLabel="#{st.stuffname}" /> 
+                    </h:selectOneMenu>
+                </th>
+                <th>
+                    <h:message for="name" style="color:red" /> 
+                </th>
+            </tr> 
+
+            <br/>
+
+            Количество             <h:inputText id="weight" value="#{requestBean.amount}" required="true"/><br/>
+
+
+            Название        <tr>
+                <th>
+                    <h:outputLabel value="Объект" for="fio"/>
+                </th>
+                <th>
+                    <h:selectOneMenu value="#{requestBean.idplace}"> 
+                        <f:selectItems value="#{placeBean.getListPlace()}" var="pl" 
+                                       itemValue="#{pl.idplace}" itemLabel="#{pl.name}" /> 
+                    </h:selectOneMenu>
+                </th>
+                <th>
+                    <h:message for="name" style="color:red" /> 
+                </th>
+            </tr>        
+
+
+            <br/>
+
+
+
+            <h:commandLink value="Готово" action="#{requestBean.editRequest()}" />
+            <div><h:commandLink value="Назад" immediate="true" action="/Request.xhtml" /> </div>
+        </h:form>
+    </h:body>
+</html>
+

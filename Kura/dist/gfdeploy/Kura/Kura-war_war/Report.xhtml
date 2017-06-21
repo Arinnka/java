@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+       <f:view> 
+            <h:form>
+                <table cellspacing="1" cellpadding="1" width="80%" border="2" > 
+                    <tr>
+                        <td> <h:commandLink value="Склады" action="Placa.xhtml" /></td>
+                        <td> <h:commandLink value="Сметы" action="Request.xhtml" /> </td> 
+                        <td> <h:commandLink value="Товары" action="Stuff.xhtml" /> </td>
+                        <td><h:commandLink value="Запросы" action="Review.xhtml" /></td>
+                        <td><h:commandLink value="Отчеты" action="Report.xhtml" /></td>  
+                        <td> <h:commandLink value="Войти" action="login.xhtml" /></td> 
+                        <td><h:outputLabel value="You have entered as #{request.remoteUser}"/> </td>
+                    </tr>           
+                </table>                
+            </h:form>
+            <br /> 
+            <br /> 
+            <br /> 
+            <br /> 
+            <br /> 
+            <h:form>
+                <h1>Отчёты</h1>
+                <table cellspacing="1" cellpadding="1" width="80%" border="1" > 
+                    <tr>
+                        <td> Объект</td>
+                        <td> Сумма </td>                   
+                    </tr> 
+                    <c:forEach items="#{reportBean.getReportInformation()}" var="m">
+                        <tr> 
+                            <td> #{m.placename} </td>
+                            <td> #{m.summa} </td>                                              
+                        </tr>                    
+                    </c:forEach>
+                </table> 
+                <br />
+                <br />                                
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+
